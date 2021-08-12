@@ -17,12 +17,15 @@ function renderFormacao(formacao){
     let containerDeFormacoes = document.getElementById('alura-container');
 
     let formacaoContainer = document.createElement("div");
-    formacaoContainer.className = "formaçao";
+    formacaoContainer.className = "formacao";
 
     let nomeDaFormacao = document.createElement('h4');
     nomeDaFormacao.innerText = formacao.title;
 
-    formacaoContainer.append(nomeDaFormacao);
+    let numeroDeCursos = document.createElement('p');
+    numeroDeCursos.innerText = `Numero de cursos envolvidos: ${formacao.courseCount}`;
+
+    formacaoContainer.append(nomeDaFormacao, numeroDeCursos);
     containerDeFormacoes.appendChild(formacaoContainer);
 }
 
